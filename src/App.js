@@ -32,13 +32,22 @@ class App extends Component {
 const Post = ({post}) => (
   <div className='post-container' >
     <h3 className='post-title'> 
-      <a href={post.link}> {post.title.rendered} </a>
+      <a href={post.link} target='_blank' title={post.title.rendered}> 
+        {post.title.rendered} 
+      </a>
     </h3>
   <div className='date'>
     {moment(post.date).format('MMMM DD YYYY')}
   </div>
   <div dangerouslySetInnerHTML={{__html: post.excerpt.rendered}} />
-  <a className='read-more' href={post.link}> Read more </a>
+  <a 
+    className='read-more' 
+    target='_blank' 
+    title='read more' 
+    href={post.link}
+  > 
+    Read more 
+  </a>
   </div>
 );
 
